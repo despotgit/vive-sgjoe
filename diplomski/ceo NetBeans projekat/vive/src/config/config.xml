@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    Document   : module-config.xml
+    Created on : 11. December 2005, 21:09
+    Author     : Aleksandar Babic
+    Description:
+        This configures the application. Read carefully the comments
+        what you can to and what you should not do.
+-->
+
+<sgjoeapp-config>
+
+<!--  ***********************************************************  -->
+<!--   Sets some default settings for the scene graph              -->
+<!--   ..............................................              -->
+<!--                                                               -->
+<!--   backclipdistance: the view model's back clip distance.      -->
+<!--   bounding radius:  the default bounding radius.              -->
+<!--   grid-dimension:   the default dimension for the grid.       -->
+<!--  ***********************************************************  -->
+
+  <scenegraph>
+    <backclipdistance>10000.0d</backclipdistance>
+    <bounding-radius>10000.0d</bounding-radius>
+    <grid-dimension>10.0d</grid-dimension>
+  </scenegraph>
+
+<!--  ***********************************************************  -->
+<!--   Sets some default values for gui components                 -->
+<!--   ...........................................                 -->
+<!--                                                               -->
+<!--   manual: the default path for the user manual                -->
+<!--  ***********************************************************  -->
+
+  <gui>
+    <manual>user_manual.html</manual>
+  </gui>
+  
+<!--  ***********************************************************  -->
+<!--   Sets the configuration for the modules to load              -->
+<!--   ..............................................              -->
+<!--                                                               -->
+<!--   These settings should not be changed util you have          -->
+<!--   implemented a new module.                                   -->
+<!--  ***********************************************************  -->
+
+  <modules>
+      
+    <module>
+      <name>drawPrimitive</name>
+      <plugin>org.sgJoe.plugin.DrawPrimitivePlugin</plugin>
+      <form>org.sgJoe.plugin.DrawPrimitiveForm</form>
+    </module>
+    
+    <module>
+      <name>createTool</name>
+      <plugin>org.sgJoe.plugin.CreateToolPlugin</plugin>
+      <form>org.sgJoe.plugin.CreateToolForm</form>
+    </module>    
+     
+    <module>
+      <name>selectObject</name>
+      <plugin>org.sgJoe.plugin.SelectObjectPlugin</plugin>
+      <form>org.sgJoe.plugin.SelectObjectForm</form>
+    </module>
+
+    <module>
+      <name>deleteObject</name>
+      <plugin>org.sgJoe.plugin.DeleteObjectPlugin</plugin>
+      <form>org.sgJoe.plugin.DeleteObjectForm</form>
+    </module>
+    
+    <module>
+      <name>oBJLoad</name>
+      <plugin>org.sgJoe.plugin.OBJLoadPlugin</plugin>
+      <form>org.sgJoe.plugin.OBJLoadForm</form>
+    </module>
+    
+    <module>
+      <name>changeBehaviour</name>
+      <plugin>org.sgJoe.plugin.ChangeBehaviourPlugin</plugin>
+      <form>org.sgJoe.plugin.ChangeBehaviourForm</form>
+    </module>
+    
+    <module>
+      <name>sceneGraphView</name>
+      <plugin>org.sgJoe.plugin.SceneGraphViewPlugin</plugin>
+      <form>org.sgJoe.plugin.SceneGraphViewForm</form>
+    </module>
+        
+    <module>
+      <name>deleteScene</name>
+      <plugin>org.sgJoe.plugin.DeleteScenePlugin</plugin>
+      <form>org.sgJoe.plugin.DeleteSceneForm</form>
+    </module>
+ 
+    <module>
+      <name>resetView</name>
+      <plugin>org.sgJoe.plugin.ResetViewPlugin</plugin>
+      <form>org.sgJoe.plugin.ResetViewForm</form>
+    </module>
+    
+    <module>
+      <name>setViewPoint</name>
+      <plugin>org.sgJoe.plugin.SetViewPointPlugin</plugin>
+      <form>org.sgJoe.plugin.SetViewPointForm</form>
+    </module>    
+    
+    <module>
+      <name>copyView</name>
+      <plugin>org.sgJoe.plugin.CopyViewPlugin</plugin>
+      <form>org.sgJoe.plugin.CopyViewForm</form>
+    </module>
+    
+    <module>
+      <name>rotateObj</name>
+      <plugin>org.sgJoe.plugin.RotateObjPlugin</plugin>
+      <form>org.sgJoe.plugin.RotateObjForm</form>
+    </module>
+    
+    <module>
+      <name>translateObj</name>
+      <plugin>org.sgJoe.plugin.TranslateObjPlugin</plugin>
+      <form>org.sgJoe.plugin.TranslateObjForm</form>
+    </module>
+    
+    <module>
+      <name>pickPointObj</name>
+      <plugin>org.sgJoe.plugin.PickPointObjPlugin</plugin>
+      <form>org.sgJoe.plugin.PickPointObjForm</form>
+    </module>
+    
+    <module>
+      <name>scaleObj</name>
+      <plugin>org.sgJoe.plugin.ScaleObjPlugin</plugin>
+      <form>org.sgJoe.plugin.ScaleObjForm</form>
+    </module>
+             
+    <module>
+      <name>changeFunctionDirection</name>
+      <plugin>org.sgJoe.plugin.ChangeFunctionDirectionPlugin</plugin>
+      <form>org.sgJoe.plugin.ChangeFunctionDirectionForm</form>
+    </module>
+   
+    <module>
+      <name>contextSwitch</name>
+      <plugin>org.sgJoe.plugin.ContextSwitchPlugin</plugin>
+      <form>org.sgJoe.plugin.ContextSwitchForm</form>
+    </module>
+    
+  </modules>
+  
+  <tools>
+    
+
+   <tool>
+      <name>Slicer</name>
+      <icon>plane.gif</icon>
+      <vir-tool>org.sgJoe.tools.slicer.SlicerVirTool</vir-tool>
+      <vtool>org.sgJoe.tools.slicer.SlicerVTool</vtool>
+      <plugin>org.sgJoe.tools.slicer.ScaleVToolPlugin</plugin>
+      <form>org.sgJoe.tools.slicer.SlicerVToolForm</form>
+      <gui-form>org.sgJoe.tools.slicer.SlicerVUIToolForm</gui-form>
+      <operators-form>org.sgJoe.tools.slicer.SlicerVToolOperatorsForm</operators-form>
+   </tool>
+   
+    
+   <tool>
+      <name>Caliper</name>
+      <icon>cylinder.gif</icon>
+      <vir-tool>org.VIVE.tools.caliper.CaliperVirTool</vir-tool>
+      <vtool>org.VIVE.tools.lights.caliper.CaliperSphereVTool</vtool>
+      <plugin>org.VIVE.tools.lights.caliper.CaliperVToolPlugin</plugin>
+      <form>org.VIVE.tools.lights.caliper.CaliperVToolForm</form>
+      <gui-form>org.VIVE.tools.lights.caliper.CaliperVUIToolForm</gui-form>
+      <operators-form>org.VIVE.tools.lights.caliper.CaliperVToolOperatorsForm</operators-form>
+   </tool>   
+   
+   
+   <tool>
+      <name>Dicer</name>
+      <icon>cube.gif</icon>
+      <vir-tool>org.VIVE.tools.dicer.DicerVirTool</vir-tool>
+      <vtool>org.VIVE.tools.dicer.DicerVTool</vtool>
+      <plugin>org.VIVE.tools.dicer.DicerVToolPlugin</plugin>
+      <form>org.VIVE.tools.dicer.DicerVToolForm</form>
+      <gui-form>org.VIVE.tools.dicer.DicerVUIToolForm</gui-form>
+      <operators-form>org.VIVE.tools.dicer.DicerVToolOperatorsForm</operators-form>
+   </tool>
+   
+   <tool>
+      <name>ScaleTool</name>
+      <icon>scale.gif</icon>
+      <vir-tool>org.sgJoe.tools.scale.ScaleVirTool</vir-tool>
+      <vtool>org.sgJoe.tools.scale.ScaleVTool</vtool>
+      <plugin>org.sgJoe.tools.scale.ScaleVToolPlugin</plugin>
+      <form>org.sgJoe.tools.scale.ScaleVToolForm</form>
+      <gui-form>org.sgJoe.tools.scale.ScaleVUIToolForm</gui-form>
+      <operators-form>org.sgJoe.tools.scale.ScaleVToolOperatorsForm</operators-form>
+   </tool>
+   
+   <tool>
+      <name>PlanarTool</name>
+      <icon>move.gif</icon>
+      <vir-tool>org.sgJoe.tools.planar.PlanarVirTool</vir-tool>
+      <vtool>org.sgJoe.tools.planar.PlanarVTool</vtool>
+      <plugin>org.sgJoe.tools.planar.PlanarVToolPlugin</plugin>
+      <form>org.sgJoe.tools.planar.PlanarVToolForm</form>
+      <gui-form>org.sgJoe.tools.planar.PlanarVUIToolForm</gui-form>
+      <operators-form>org.sgJoe.tools.planar.PlanarVToolOperatorsForm</operators-form>
+   </tool>    
+  
+   <tool>
+      <name>PointLightTool</name>
+      <icon>pointlight.gif</icon>
+      <vir-tool>org.sgJoe.tools.lights.point.PointLightVirTool</vir-tool>
+      <vtool>org.sgJoe.tools.lights.point.PointLightVTool</vtool>
+      <plugin>org.sgJoe.tools.lights.point.PointLightVToolPlugin</plugin>
+      <form>org.sgJoe.tools.lights.point.PointLightVToolForm</form>
+      <gui-form>org.sgJoe.tools.lights.point.PointLightVUIToolForm</gui-form>
+      <operators-form>org.sgJoe.tools.lights.LightVToolOperatorsForm</operators-form>
+   </tool>
+   
+   
+   
+     
+   
+    </tools>
+    
+    
+  
+</sgjoeapp-config>
